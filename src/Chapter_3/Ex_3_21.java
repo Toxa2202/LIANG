@@ -1,0 +1,57 @@
+package Chapter_3;
+import java.util.*;
+
+public class Ex_3_21 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter year: (e.g., 2012):");
+		int year = input.nextInt();
+		System.out.println("Enter month: 1 - 12: ");
+		int month = input.nextInt();
+		int m = month;
+		System.out.println("Enter the day of the month: 1 - 31: ");
+		int day = input.nextInt();
+		int q = day;
+		int yearOfCentury = year % 100;
+		int k = yearOfCentury;
+		int century = year / 100;
+		int j = century;
+		
+		if (month == 1 || day == 2){
+			month += 12;
+			year -= 1;
+		}
+		
+		
+		int dayOfWeek = (q + ((26 * (m + 1)) / 10) + k + k / 4 + j / 4 + 5 * j) % 7;
+
+		switch (dayOfWeek) {
+		case 0:
+			System.out.println("Day of week is Sunday!");
+			break;
+		case 1:
+			System.out.println("Day of week is Monday!");
+			break;
+		case 2:
+			System.out.println("Day of week is Tuesday!");
+			break;
+		case 3:
+			System.out.println("Day of week is Wednesday!");
+			break;
+		case 4:
+			System.out.println("Day of week is Thursday!");
+			break;
+		case 5:
+			System.out.println("Day of week is Friday!");
+			break;
+		case 6:
+			System.out.println("Day of week is Saturday!");
+			break;
+		default:
+			System.out.println("Something is wrong!");
+			break;
+		}
+	}
+
+}
